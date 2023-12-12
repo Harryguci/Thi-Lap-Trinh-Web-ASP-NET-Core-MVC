@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Category>
+
+<select id="agileinfo-nav_search" name="agileinfo_search" required="" onchange="HandleCategoryChange()">
+	<option value="0">All</option>
+	@foreach(Category ca in Model)
+	{
+		<option value="@ca.Id">@ca.Name</option>
+	}
+</select>
+
+<script>
+	function HandleCategoryChange() 
+	{
+		var idCategory = document.getElementById('agileinfo-nav_search').value;
+		// alert(idCategory);
+		$.ajax({
+			url: `/Home/ListProduct?categoryId=${idCategory}`,
+			method: "GET",
+			success: function (response) {
+				document.querySelector('.wrapper').innerHTML = response;
+			}
+		});
+	}
+</script>

@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/ChuQuangHuy_Layout.cshtml";
+}
+@model IEnumerable<Product>
+
+<div class="wrapper">
+    @foreach (Product p in Model)
+    {
+        <div class="col-xs-4 product-men">
+            <div class="men-pro-item">
+                <div class="men-thumb-item">
+                    <img src="/images/@p.Image" alt="">
+                </div>
+                <div class="item-info-product ">
+                    <h4>
+                        <a href="#">@p.Name</a>
+                    </h4>
+                    <div class="info-product-price">
+                        <span class="item_price">$@p.UnitPrice</span>
+                    </div>
+                    <div class="snipcart-details">
+                        <a asp-action="DeleteProduct" asp-route-productId="@p.Id" class="button">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

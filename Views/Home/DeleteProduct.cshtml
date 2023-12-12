@@ -1,0 +1,89 @@
+﻿@model ChuQuangHuy_211204440.Models.Product
+
+@{
+    ViewData["Title"] = "DeleteProduct";
+    Layout = "~/Views/Shared/ChuQuangHuy_Layout.cshtml";
+    string? message = ViewBag.Message;
+}
+<style>
+    input[type="submit"] {
+        background: rgb(200, 200, 200);
+        color: red;
+    }
+
+    input[type="submit"]:hover {
+        background: red;
+        color: white;
+    }
+
+    .product-info {
+        font-size: 1.6rem;
+    }
+
+    .product-info dt {
+        padding-right: 2rem;
+    }
+
+</style>
+
+<h2>Delete Product</h2>
+@if (message != null && message.Length > 0)
+{
+    <span style="color: red; font-size: 1rem">@message</span>
+}
+
+<h3>Are you sure you want to delete this product?</h3>
+<div>
+    <h4>Product</h4>
+    <hr />
+    <dl class="dl-horizontal product-info">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Image)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Available)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Available)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Category.Id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Provider)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Provider.Id)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteProduct" style="justify-content: center">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-default" />
+        <a asp-action="Index" class="btn btn-default">Back to List</a>
+    </form>
+</div>

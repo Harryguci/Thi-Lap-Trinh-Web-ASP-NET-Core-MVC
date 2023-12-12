@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Product>
+@{
+    int pageNum = Model.Count();
+    int num = (int)Math.Ceiling(pageNum / 3.0);
+}
+<ul id="pagination-list">
+    @for (int i = 1; i <= num; i++)
+    {
+        <li>
+            <input type="radio" class="checked" name="page" onchange="HandleChangePage(@i)">
+            <span class="span">@i - @(i+2)</span>
+        </li>
+    }
+</ul>
+
+<script>
+    function HandleChangePage(page) 
+    {
+        var idCategory = document.getElementById('agileinfo-nav_search').value;
+        if (!idCategory) idCategory = 0;
+
+        $.ajax({
+            url: `/Home/ListProduct?pageIndex=${page}`,
+            method: "GET",
+            success: function (response) {
+                document.querySelector('.wrapper').innerHTML = response;
+            }
+        });
+    }
+</script>

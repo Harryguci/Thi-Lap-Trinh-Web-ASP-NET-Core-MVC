@@ -1,0 +1,94 @@
+﻿<div id="mainleft" class="side-bar col-md-3">
+    <div class="snipcart-details">
+        <a href="" class="button">Add New Product</a>
+    </div>
+    <div class="search-hotel">
+        <h3 class="agileits-sear-head">Search Here..</h3>
+        <form action="#" method="post">
+            <input type="search" placeholder="Product name..." name="search" required="">
+            <input type="button" value=" ">
+        </form>
+    </div>
+
+    <!-- pagination -->
+    <div class="left-side">
+        <h3 class="agileits-sear-head">Page</h3>
+        @await Component.InvokeAsync("Pagination")
+        @* <ul>
+            <li>
+                <input type="radio" class="checked" name="page">
+                <span class="span">1 - 3</span>
+            </li>
+            <li>
+                <input type="radio" class="checked" name="page">
+                <span class="span">4 - 6</span>
+            </li>
+            <li>
+                <input type="radio" class="checked" name="page">
+                <span class="span">7 - 9</span>
+            </li>
+            <li>
+                <input type="radio" class="checked" name="page">
+                <span class="span">10 - 12</span>
+            </li>
+        </ul> *@
+    </div>
+    <!-- //pagination -->
+    <!-- reviews -->
+    <div class="customer-rev left-side">
+        <h3 class="agileits-sear-head">Customer Review</h3>
+        <ul>
+            <li>
+                <a href="#">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span>5.0</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <span>4.0</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <span>3.5</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <span>3.0</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <span>2.5</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- //reviews -->
+</div>
